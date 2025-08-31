@@ -1,46 +1,38 @@
 import React from "react";
-import examsData from "../data/examsData"; // Import exam data (JSON or JS array)
+import examsData from "../data/examsData";
 
 function Exams() {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans px-6 py-12">
-      
-      {/* Page Header Section */}
+    <div className="min-h-screen bg-white font-sans px-6 py-12">
       <section className="text-center mb-16">
-        {/* Page Title */}
-        <h2 className="text-4xl font-bold text-teal-700 mb-4">Past Exams</h2>
-        {/* Description */}
-        <p className="text-lg text-gray-600 max-w-xl mx-auto">
-          Access previous exams for all your courses. Click below to view the exam.
+        <h2 className="text-4xl font-bold text-[#0D2A4B] mb-4">Past Exams</h2>
+        <p className="text-lg text-black max-w-xl mx-auto">
+         Access comprehensive archive of past examination papers with complete solutions. 
+  Practice with real previous tests to enhance your preparation.
         </p>
       </section>
 
-      {/* Exams Grid Section */}
       <section className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Loop through each subject in examsData */}
           {examsData.map((subject, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition transform hover:-translate-y-1"
+              className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition border border-gray-200 hover:border-gray-300" // Changed hover border
             >
-              {/* Subject Title */}
-              <h2 className="text-xl font-semibold mb-4 text-teal-700">
+              <h2 className="text-xl font-semibold mb-4 text-[#0D2A4B]">
                 {subject.subject}
               </h2>
 
-              {/* List of Exams for the subject */}
               <ul className="space-y-3">
                 {subject.exams.map((exam, idx) => (
                   <li key={idx}>
-                    {/* Exam Link */}
                     <a
-                      href={exam.file} // Path to PDF or exam file
-                      target="_blank" // Open in new tab
-                      rel="noopener noreferrer" // Security for external links
-                      className="block px-4 py-3 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-xl font-medium transition"
+                      href={exam.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-4 py-3 bg-gray-100 hover:bg-gray-200 text-[#0D2A4B] rounded-xl font-medium transition" // Changed hover to gray
                     >
-                      {exam.title} {/* Exam Name */}
+                      {exam.title}
                     </a>
                   </li>
                 ))}

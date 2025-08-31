@@ -54,8 +54,12 @@ export default function Courses() {
   return (
     <section className="min-h-screen bg-slate-50 px-6 py-12">
       {/* Page Title */}
-      <h1 className="text-4xl font-bold text-teal-700 text-center mb-10">
-        Departments
+      <p className="text-lg text-black max-w-xl mx-auto mb-8">
+  Access comprehensive archive of past examination papers with complete solutions. 
+  Practice with real previous tests to enhance your preparation.
+</p>
+<h1 className="text-3xl font-bold text-[#0D2A4B] mt-10 mb-6 text-center">    
+     Departments
       </h1>
 
       {/* Departments List */}

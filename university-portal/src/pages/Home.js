@@ -5,7 +5,7 @@ export default function Home() {
     <section className="min-h-screen bg-slate-50 flex flex-col items-center justify-center text-center px-6 py-12">
       {/* Hero Section */}
       <div className="max-w-3xl">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-teal-700 mb-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2A4B] mb-6">
           Welcome to the University Student Hub
         </h1>
         <p className="text-lg text-gray-600 mb-8">

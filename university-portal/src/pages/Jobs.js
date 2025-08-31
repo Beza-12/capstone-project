@@ -1,22 +1,20 @@
 import React, { useState } from "react";
- import SearchBar from "../component/SearchBar";
+import SearchBar from "../component/SearchBar";
 
 export default function Jobs() {
-  
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [expandedDept, setExpandedDept] = useState(null);
   const [fetchedInfo, setFetchedInfo] = useState(null);
 
-  // Job categories with departments and links
   const jobCategories = {
     Technology: {
       "Software Engineering": { 
         description: "Build and manage software systems.", 
-        link: "/fetch/software_engineering" // 🔹 fetch from API instead of static link
+        link: "/fetch/software_engineering"
       },
       "Computer Science": { 
         description: "Develop algorithms, programs, and AI systems.", 
-        link: "https://en.wikipedia.org/wiki/Computer_science" // external link
+        link: "https://en.wikipedia.org/wiki/Computer_science"
       },
     },
     "Medical/Health": {
@@ -66,9 +64,8 @@ export default function Jobs() {
 
     setExpandedDept(dept);
 
-    // 🔹 If link starts with /fetch/, call Wikipedia API
     if (link.startsWith("/fetch/")) {
-      const topic = link.split("/fetch/")[1]; // e.g. "software_engineering"
+      const topic = link.split("/fetch/")[1];
       try {
         const response = await fetch(
           `https://en.wikipedia.org/api/rest_v1/page/summary/${topic}`
@@ -76,7 +73,6 @@ export default function Jobs() {
         const data = await response.json();
         setFetchedInfo(data.extract || "No additional info found.");
       } catch (error) {
-        console.error("Error fetching data:", error);
         setFetchedInfo("Failed to load extra info.");
       }
     } else {
@@ -85,10 +81,13 @@ export default function Jobs() {
   };
 
   return (
-    
-    <section className="min-h-screen bg-slate-50 px-6 py-12">
-       <SearchBar /> 
-      <h1 className="text-4xl font-bold text-teal-700 text-center mb-10">
+    <section className="min-h-screen bg-white px-6 py-12">
+      <SearchBar />
+<p className="text-2xl font-normal text-[#0D2A4B] text-center mb-10">      
+    Discover detailed job descriptions, required qualifications, and potential career trajectories 
+to help you make informed decisions about your professional future.
+      </p>
+      <h1 className="text-4xl font-bold text-[#0D2A4B] text-center mb-10">
         Job Categories
       </h1>
 
@@ -96,15 +95,15 @@ export default function Jobs() {
         {Object.keys(jobCategories).map((category) => (
           <div
             key={category}
-            className="bg-white rounded-2xl shadow-md overflow-hidden"
+            className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200"
           >
-            {/* Category Header */}
+            {/* Category Header - Changed hover to gray */}
             <button
               onClick={() => toggleCategory(category)}
-              className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-gray-800 hover:bg-teal-50 transition"
+              className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-[#0D2A4B] hover:bg-gray-50 transition" // Changed to hover:bg-gray-50
             >
               {category}
-              <span className="text-xl">
+              <span className="text-xl text-[#0D2A4B]">
                 {expandedCategory === category ? "▲" : "▼"}
               </span>
             </button>
@@ -117,27 +116,27 @@ export default function Jobs() {
                   return (
                     <div
                       key={dept}
-                      className="bg-slate-100 p-4 rounded-xl shadow-sm hover:shadow-md transition"
+                      className="bg-gray-50 p-4 rounded-xl border border-gray-200 hover:bg-gray-100 transition" // Changed to hover:bg-gray-100
                     >
                       <button
                         onClick={() => toggleDept(dept, deptData.link)}
-                        className="w-full text-left flex justify-between items-center font-medium text-gray-800"
+                        className="w-full text-left flex justify-between items-center font-medium text-[#0D2A4B]"
                       >
                         {dept}
-                        <span className="text-lg">
+                        <span className="text-lg text-[#0D2A4B]">
                           {expandedDept === dept ? "▲" : "▼"}
                         </span>
                       </button>
 
                       {expandedDept === dept && (
-                        <div className="mt-2 text-gray-600">
+                        <div className="mt-2 text-black">
                           <p>{deptData.description}</p>
 
                           {/* If Wikipedia API fetch */}
                           {deptData.link.startsWith("/fetch/") ? (
                             <div className="mt-2">
                               {fetchedInfo ? (
-                                <p className="text-sm text-gray-700">
+                                <p className="text-sm text-black">
                                   {fetchedInfo}
                                 </p>
                               ) : (
@@ -149,12 +148,8 @@ export default function Jobs() {
                           ) : (
                             <a
                               href={deptData.link}
-                              target={
-                                deptData.link.startsWith("http")
-                                  ? "_blank"
-                                  : "_self"
-                              }
-                              className="text-teal-600 hover:underline mt-1 inline-block"
+                              target={deptData.link.startsWith("http") ? "_blank" : "_self"}
+                              className="text-[#0D2A4B] hover:underline mt-1 inline-block"
                             >
                               Learn More
                             </a>
