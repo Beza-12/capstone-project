@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Computer Science",
+    "category": "Technology",
+    "description": "Focuses on algorithms, software, and systems. Prepares students for tech-driven roles.",
+    "careerPath": "Software Developer, Data Scientist, AI Engineer, Researcher.",
+    "moreInfo": "https://www.coursera.org/browse/computer-science"
+  },
+  {
+    "id": 2,
+    "name": "Information Science",
+    "category": "Technology",
+    "description": "Bridges technology and information management. Involves organizing, analyzing, and using data.",
+    "careerPath": "Database Administrator, IT Consultant, Information Manager.",
+    "moreInfo": "https://www.simmons.edu/academics/information-science"
+  },
+  {
+    "id": 3,
+    "name": "Software Engineering",
+    "category": "Technology",
+    "description": "Applies engineering principles to software development and maintenance.",
+    "careerPath": "Software Engineer, DevOps Engineer, Systems Architect.",
+    "moreInfo": "https://roadmap.sh/software-engineer"
+  },
+  {
+    "id": 4,
+    "name": "Dentistry",
+    "category": "Medical",
+    "description": "Medical field dealing with oral health, teeth, and related treatments.",
+    "careerPath": "Dentist, Dental Surgeon, Orthodontist.",
+    "moreInfo": "https://www.ada.org/resources/careers-in-dentistry"
+  },
+  {
+    "id": 5,
+    "name": "Radiology",
+    "category": "Medical",
+    "description": "Specializes in imaging to diagnose and treat diseases using X-rays, MRIs, and CT scans.",
+    "careerPath": "Radiologist, Imaging Specialist, Medical Consultant.",
+    "moreInfo": "https://www.radiologyinfo.org/en/info.cfm?pg=career"
+  },
+  {
+    "id": 6,
+    "name": "Anesthesia",
+    "category": "Medical",
+    "description": "Focuses on pain management and patient safety during surgeries and medical procedures.",
+    "careerPath": "Anesthesiologist, Pain Specialist, Critical Care Expert.",
+    "moreInfo": "https://www.asahq.org/careercenter"
+  },
+  {
+    "id": 7,
+    "name": "Medicine",
+    "category": "Medical",
+    "description": "Broad field covering prevention, diagnosis, and treatment of diseases.",
+    "careerPath": "Physician, Surgeon, Public Health Specialist.",
+    "moreInfo": "https://www.bma.org.uk/advice-and-support/career-progression/becoming-a-doctor"
+  },
+  {
+    "id": 8,
+    "name": "Biomedical Engineering",
+    "category": "Engineering",
+    "description": "Combines biology and engineering to develop healthcare solutions.",
+    "careerPath": "Biomedical Engineer, Clinical Engineer, Research Scientist.",
+    "moreInfo": "https://www.bmes.org/whatisbiomedicalengineering"
+  },
+  {
+    "id": 9,
+    "name": "Chemical Engineering",
+    "category": "Engineering",
+    "description": "Applies chemistry, physics, and biology to solve industrial and environmental problems.",
+    "careerPath": "Chemical Engineer, Process Engineer, Energy Specialist.",
+    "moreInfo": "https://www.icheme.org/knowledge/chemical-engineering-matters"
+  },
+  {
+    "id": 10,
+    "name": "Food Engineering",
+    "category": "Engineering",
+    "description": "Focuses on food processing, safety, and technology.",
+    "careerPath": "Food Engineer, Quality Control Specialist, Nutrition Scientist.",
+    "moreInfo": "https://www.ift.org/career-development"
+  },
+  {
+    "id": 11,
+    "name": "Water Engineering",
+    "category": "Engineering",
+    "description": "Deals with water resources, supply, treatment, and environmental impact.",
+    "careerPath": "Water Engineer, Hydrologist, Environmental Engineer.",
+    "moreInfo": "https://www.prospects.ac.uk/job-profiles/water-engineer"
+  }
+]

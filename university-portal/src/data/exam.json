@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Applied Midterm Exam 4",
+    "description": "Applied course midterm exam 4",
+    "file": "/assets/exams/Applied_Midterm_Exam_4.pdf"
+  },
+  {
+    "id": 2,
+    "title": "Applied Midterm Exam 5",
+    "description": "Applied course midterm exam 5",
+    "file": "/assets/exams/Applied_Midterm_Exam_5.pdf"
+  },
+  {
+    "id": 3,
+    "title": "Applied Midterm Exam 6",
+    "description": "Applied course midterm exam 6",
+    "file": "/assets/exams/Applied_Midterm_Exam_6.pdf"
+  },
+  {
+    "id": 4,
+    "title": "Logic Midterm Exam 1",
+    "description": "Logic course midterm exam 1",
+    "file": "/assets/exams/Logic_midterm_1.pdf"
+  },
+  {
+    "id": 5,
+    "title": "Logic Midterm Exam 2",
+    "description": "Logic course midterm exam 2",
+    "file": "/assets/exams/Logic_midterm_2.pdf"
+  },
+  {
+    "id": 6,
+    "title": "Logic Final Exam",
+    "description": "Logic course final exam",
+    "file": "/assets/exams/Logic_final.pdf"
+  },
+  {
+    "id": 7,
+    "title": "Psychology Midterm Exam 1",
+    "description": "Psychology course midterm exam 1",
+    "file": "/assets/exams/Psychology_midterm_1.pdf"
+  },
+  {
+    "id": 8,
+    "title": "Psychology Midterm Exam 2",
+    "description": "Psychology course midterm exam 2",
+    "file": "/assets/exams/Psychology_midterm_2.pdf"
+  },
+  {
+    "id": 9,
+    "title": "Psychology Final Exam",
+    "description": "Psychology course final exam",
+    "file": "/assets/exams/Psychology_final.pdf"
+  },
+  {
+    "id": 10,
+    "title": "Math Midterm Exam 4",
+    "description": "Math course midterm exam 7",
+    "file": "/assets/exams/Applied_Midterm_Exam_7.pdf"
+  },
+  {
+    "id": 11,
+    "title": "Math Midterm Exam 5",
+    "description": "Math course midterm exam 8",
+    "file": "/assets/exams/Applied_Midterm_Exam_8.pdf"
+  },
+  {
+    "id": 12,
+    "title": "Math Midterm Exam 6",
+    "description": "Math course midterm exam 9",
+    "file": "/assets/exams/Applied_Midterm_Exam_9.pdf"
+  }
+]
