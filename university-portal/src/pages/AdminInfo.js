@@ -22,8 +22,8 @@ export default function AdminInfo() {
   return (
     <section className="min-h-screen bg-slate-50 px-6 py-12">
       {/* Page Title */}
-<h1 className="text-3xl font-bold text-[#0D2A4B] mt-10 mb-6 text-center">
-  Admin Information
+      <h1 className="text-3xl font-bold text-[#0D2A4B] mt-10 mb-6 text-center">
+        Admin Information
       </h1>
 
       {/* Admin Cards Grid */}

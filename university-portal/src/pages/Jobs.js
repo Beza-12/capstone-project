@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import SearchBar from "../component/SearchBar";
 
+// Jobs component displays job categories, departments, and detailed descriptions
 export default function Jobs() {
+  // State to track which job category is expanded
   const [expandedCategory, setExpandedCategory] = useState(null);
+  // State to track which department is expanded
   const [expandedDept, setExpandedDept] = useState(null);
+  // State to store fetched info from Wikipedia API
   const [fetchedInfo, setFetchedInfo] = useState(null);
 
+  // Object containing job categories, departments, descriptions, and links
   const jobCategories = {
     Technology: {
       "Software Engineering": { 
         description: "Build and manage software systems.", 
-        link: "/fetch/software_engineering"
+        link: "/fetch/software_engineering" // Fetch extra info dynamically
       },
       "Computer Science": { 
         description: "Develop algorithms, programs, and AI systems.", 
@@ -49,12 +54,14 @@ export default function Jobs() {
     },
   };
 
+  // Function to toggle category expansion
   const toggleCategory = (category) => {
-    setExpandedCategory(expandedCategory === category ? null : category);
-    setExpandedDept(null);
-    setFetchedInfo(null);
+    setExpandedCategory(expandedCategory === category ? null : category); // Collapse if already open
+    setExpandedDept(null); // Reset department state
+    setFetchedInfo(null); // Reset fetched info
   };
 
+  // Function to toggle department expansion and fetch data if needed
   const toggleDept = async (dept, link) => {
     if (expandedDept === dept) {
       setExpandedDept(null);
@@ -64,6 +71,7 @@ export default function Jobs() {
 
     setExpandedDept(dept);
 
+    // Fetch extra info for dynamic links starting with /fetch/
     if (link.startsWith("/fetch/")) {
       const topic = link.split("/fetch/")[1];
       try {
@@ -82,29 +90,35 @@ export default function Jobs() {
 
   return (
     <section className="min-h-screen bg-white px-6 py-12">
+      {/* Search Bar */}
       <SearchBar />
-<p className="text-2xl font-normal text-[#0D2A4B] text-center mb-10">      
-    Discover detailed job descriptions, required qualifications, and potential career trajectories 
-to help you make informed decisions about your professional future.
+
+      {/* Intro Paragraph */}
+      <p className="text-2xl font-normal text-[#0D2A4B] text-center mb-10">      
+        Discover detailed job descriptions, required qualifications, and potential career trajectories 
+        to help you make informed decisions about your professional future.
       </p>
+
+      {/* Page Title */}
       <h1 className="text-4xl font-bold text-[#0D2A4B] text-center mb-10">
         Job Categories
       </h1>
 
+      {/* Job Categories List */}
       <div className="max-w-4xl mx-auto space-y-4">
         {Object.keys(jobCategories).map((category) => (
           <div
             key={category}
             className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200"
           >
-            {/* Category Header - Changed hover to gray */}
+            {/* Category Header */}
             <button
               onClick={() => toggleCategory(category)}
-              className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-[#0D2A4B] hover:bg-gray-50 transition" // Changed to hover:bg-gray-50
+              className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-[#0D2A4B] hover:bg-gray-50 transition"
             >
               {category}
               <span className="text-xl text-[#0D2A4B]">
-                {expandedCategory === category ? "▲" : "▼"}
+                {expandedCategory === category ? "▲" : "▼"} {/* Arrow indicator */}
               </span>
             </button>
 
@@ -116,8 +130,9 @@ to help you make informed decisions about your professional future.
                   return (
                     <div
                       key={dept}
-                      className="bg-gray-50 p-4 rounded-xl border border-gray-200 hover:bg-gray-100 transition" // Changed to hover:bg-gray-100
+                      className="bg-gray-50 p-4 rounded-xl border border-gray-200 hover:bg-gray-100 transition"
                     >
+                      {/* Department Header */}
                       <button
                         onClick={() => toggleDept(dept, deptData.link)}
                         className="w-full text-left flex justify-between items-center font-medium text-[#0D2A4B]"
@@ -128,6 +143,7 @@ to help you make informed decisions about your professional future.
                         </span>
                       </button>
 
+                      {/* Department Description & Extra Info */}
                       {expandedDept === dept && (
                         <div className="mt-2 text-black">
                           <p>{deptData.description}</p>

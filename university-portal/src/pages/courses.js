@@ -1,8 +1,9 @@
 // src/pages/Courses.js
 import React, { useState } from "react";
 
+// Courses component displays a list of departments and their courses
 export default function Courses() {
-  // State to track which department is currently expanded
+  // State to track which department is currently expanded in the accordion
   const [expandedDept, setExpandedDept] = useState(null);
 
   // Object containing departments and their respective courses with descriptions
@@ -48,31 +49,33 @@ export default function Courses() {
 
   // Function to toggle department expansion
   const toggleDept = (dept) => {
-    setExpandedDept(expandedDept === dept ? null : dept);
+    setExpandedDept(expandedDept === dept ? null : dept); // Collapse if already expanded, otherwise expand
   };
 
   return (
     <section className="min-h-screen bg-slate-50 px-6 py-12">
-      {/* Page Title */}
+      {/* Intro paragraph */}
       <p className="text-lg text-black max-w-xl mx-auto mb-8">
-  Access comprehensive archive of past examination papers with complete solutions. 
-  Practice with real previous tests to enhance your preparation.
-</p>
-<h1 className="text-3xl font-bold text-[#0D2A4B] mt-10 mb-6 text-center">    
-     Departments
+        Access comprehensive archive of past examination papers with complete solutions. 
+        Practice with real previous tests to enhance your preparation.
+      </p>
+
+      {/* Page Title */}
+      <h1 className="text-3xl font-bold text-[#0D2A4B] mt-10 mb-6 text-center">    
+        Departments
       </h1>
 
       {/* Departments List */}
       <div className="max-w-4xl mx-auto space-y-4">
         {Object.keys(departments).map((dept) => (
           <div key={dept} className="bg-white rounded-2xl shadow-md overflow-hidden">
-            {/* Department Header */}
+            {/* Department Header (clickable for accordion) */}
             <button
               onClick={() => toggleDept(dept)}
               className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-gray-800 hover:bg-teal-50 transition"
             >
-              {dept}
-              <span className="text-xl">{expandedDept === dept ? "▲" : "▼"}</span>
+              {dept} {/* Department Name */}
+              <span className="text-xl">{expandedDept === dept ? "▲" : "▼"}</span> {/* Arrow indicates expanded/collapsed */}
             </button>
 
             {/* Courses Accordion */}
